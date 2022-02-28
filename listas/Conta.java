@@ -1,3 +1,11 @@
+//1-​Faça um programa em Java que imprima na tela a soma de dois números inteiros e a soma de dois 
+//números deponto flutuante (double). Você não precisa ler os valores do teclado,
+// pode apenas declarar e utilizar as variáveis.
+
+//2-Faça um programa em Java imprima na tela a tabuada do número 
+
+//3-​Faça um programa em Java imprima na tela a tabuada do número 6 e do número 2, lado a lado
+
 public class Conta {
     public static void main( String args[]) {
 
