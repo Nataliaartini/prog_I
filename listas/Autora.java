@@ -3,18 +3,18 @@
 // implemente o método carrega Do Teclado()​, que, quando for chamado, faz a leitura do teclado de 
 // uma string e um inteiro cujos valores são colocados nos atributos do objeto executando o método.
 
-class Autor {
+class Autora {
     private String nome;
     private int id;
 
-    public Autor (String nome, int id) {
+    public Autora (String nome, int id) {
 		this.nome = nome;
 		this.id = id;
 	}
 
-	public double getNome() { return nome; }
+	public String getNome() { return nome; }
 
-	public double getID() { return id; }
+	public int getID() { return id; }
 
 	public void setNome (String nome) { this.nome = nome; }
 
