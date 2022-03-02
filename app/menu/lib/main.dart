@@ -1,74 +1,89 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
-void main() => runApp(const AnimatedContainerApp());
-
-class AnimatedContainerApp extends StatefulWidget {
-  const AnimatedContainerApp({Key? key}) : super(key: key);
-
-  @override
-  _AnimatedContainerAppState createState() => _AnimatedContainerAppState();
+void main() {
+  runApp(
+    MyApp(
+      items: List<ListItem>.generate(
+        20,
+            (i) => i % 6 == 0
+            ? HeadingItem('Heading $i')
+            : MessageItem('Sender $i', 'Message body $i'),
+      ),
+    ),
+  );
 }
 
-class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
-  // Define the various properties with default values. Update these properties
-  // when the user taps a FloatingActionButton.
-  double _width = 50;
-  double _height = 50;
-  Color _color = Colors.green;
-  BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
+class MyApp extends StatelessWidget {
+  final List<ListItem> items;
+
+  const MyApp({Key? key, required this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    const title = 'Mixed List';
+
     return MaterialApp(
+      title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('AnimatedContainer Demo'),
+          title: const Text(title),
         ),
-        body: Center(
-          child: AnimatedContainer(
-            // Use the properties stored in the State class.
-            width: _width,
-            height: _height,
-            decoration: BoxDecoration(
-              color: _color,
-              borderRadius: _borderRadius,
-            ),
-            // Define how long the animation should take.
-            duration: const Duration(seconds: 1),
-            // Provide an optional curve to make the animation feel smoother.
-            curve: Curves.fastOutSlowIn,
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          // When the user taps the button
-          onPressed: () {
-            // Use setState to rebuild the widget with new values.
-            setState(() {
-              // Create a random number generator.
-              final random = Random();
+        body: ListView.builder(
+          // Let the ListView know how many items it needs to build.
+          itemCount: items.length,
+          // Provide a builder function. This is where the magic happens.
+          // Convert each item into a widget based on the type of item it is.
+          itemBuilder: (context, index) {
+            final item = items[index];
 
-              // Generate a random width and height.
-              _width = random.nextInt(300).toDouble();
-              _height = random.nextInt(300).toDouble();
-
-              // Generate a random color.
-              _color = Color.fromRGBO(
-                random.nextInt(256),
-                random.nextInt(256),
-                random.nextInt(256),
-                1,
-              );
-
-              // Generate a random border radius.
-              _borderRadius =
-                  BorderRadius.circular(random.nextInt(100).toDouble());
-            });
+            return ListTile(
+              title: item.buildTitle(context),
+              subtitle: item.buildSubtitle(context),
+            );
           },
-          child: const Icon(Icons.play_arrow),
         ),
       ),
     );
   }
+}
+
+/// The base class for the different types of items the list can contain.
+abstract class ListItem {
+  /// The title line to show in a list item.
+  Widget buildTitle(BuildContext context);
+
+  /// The subtitle line, if any, to show in a list item.
+  Widget buildSubtitle(BuildContext context);
+}
+
+/// A ListItem that contains data to display a heading.
+class HeadingItem implements ListItem {
+  final String heading;
+
+  HeadingItem(this.heading);
+
+  @override
+  Widget buildTitle(BuildContext context) {
+    return Text(
+      heading,
+      style: Theme.of(context).textTheme.headline5,
+    );
+  }
+
+  @override
+  Widget buildSubtitle(BuildContext context) => const SizedBox.shrink();
+}
+
+/// A ListItem that contains data to display a message.
+class MessageItem implements ListItem {
+  final String sender;
+  final String body;
+
+  MessageItem(this.sender, this.body);
+
+  @override
+  Widget buildTitle(BuildContext context) => Text(sender);
+
+  @override
+  Widget buildSubtitle(BuildContext context) => Text(body);
 }
