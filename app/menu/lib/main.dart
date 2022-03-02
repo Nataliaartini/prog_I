@@ -35,24 +35,27 @@ class MyApp extends StatelessWidget {
           title: const Text("Cardápio da Semana"),
           backgroundColor: Colors.lightGreen[900],
         ),
-        body: ListView.builder(
-          // Let the ListView know how many items it needs to build.
-          itemCount: items.length,
-          // Provide a builder function. This is where the magic happens.
-          // Convert each item into a widget based on the type of item it is.
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return ListTile(
-              title: item.buildTitle(context),
-              subtitle: item.buildSubtitle(context),
-            );
-          },
+        body: Card(
+          child: Column(
+            children: [
+              Text("risoles"),
+              Text("brigadeiro"),
+              Text("paçoca"),
+              Text("pastel"),
+              Text("sanduíche"),
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){
             //ADD CODE PRESSED BUTTON
           },
           backgroundColor: Colors.black,
+          tooltip: "Adicionar item na lista",
+          elevation: 12,
+          highlightElevation: 50,
+          foregroundColor: Colors.green[700],
+
           child: const Icon(Icons.add),
         ),
       ),
