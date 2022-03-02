@@ -5,9 +5,10 @@ void main() {
     MyApp(
       items: List<ListItem>.generate(
         20,
-            (i) => i % 6 == 0
-            ? HeadingItem('Heading $i')
-            : MessageItem('Sender $i', 'Message body $i'),
+            (i) =>
+        i % 6 == 0
+            ? HeadingItem('Categoria $i')
+            : MessageItem('Item $i', 'ingredientes $i'),
       ),
     ),
   );
@@ -18,15 +19,21 @@ class MyApp extends StatelessWidget {
 
   const MyApp({Key? key, required this.items}) : super(key: key);
 
+  ///statefulWidget para componentes com estado que sofrem alteração em tempo de execução
+  ///e statelessWidget para conteúdo estático, sem estado ou sem alteração
+
   @override
+
+  ///possui estado e sobrescreve método build em statelessWidget
   Widget build(BuildContext context) {
-    const title = 'Mixed List';
+    const title = 'Cardápio Cantina UFFS';
 
     return MaterialApp(
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(title),
+          title: const Text("Cardápio da Semana"),
+          backgroundColor: Colors.lightGreen[900],
         ),
         body: ListView.builder(
           // Let the ListView know how many items it needs to build.
@@ -35,12 +42,18 @@ class MyApp extends StatelessWidget {
           // Convert each item into a widget based on the type of item it is.
           itemBuilder: (context, index) {
             final item = items[index];
-
             return ListTile(
               title: item.buildTitle(context),
               subtitle: item.buildSubtitle(context),
             );
           },
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            //ADD CODE PRESSED BUTTON
+          },
+          backgroundColor: Colors.black,
+          child: const Icon(Icons.add),
         ),
       ),
     );
@@ -66,7 +79,7 @@ class HeadingItem implements ListItem {
   Widget buildTitle(BuildContext context) {
     return Text(
       heading,
-      style: Theme.of(context).textTheme.headline5,
+      style: ThemeData(fontFamily: 'RobotoMono').textTheme.headline5,
     );
   }
 
