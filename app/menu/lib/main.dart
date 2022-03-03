@@ -2,29 +2,50 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MyApp(
-      items: List<ListItem>.generate(
-        20,
-            (i) =>
-        i % 6 == 0
-            ? HeadingItem('Categoria $i')
-            : MessageItem('Item $i', 'ingredientes $i'),
-      ),
-    ),
-  );
+      MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  final List<ListItem> items;
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppState();
+  }
+}
 
-  const MyApp({Key? key, required this.items}) : super(key: key);
+class Planetas extends StatelessWidget {
+  final List<String> planetas;
+
+  Planetas(this.planetas);
+
+  Widget _buildPlanetaItem(BuildContext context, int index) {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          Image.asset('assets/planeta1.jpg'),
+          Text(planetas[index], style: TextStyle(color: Colors.purple[200]))
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemBuilder: _buildPlanetaItem,
+      itemCount: planetas.length,
+    );
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  List<String> _planetas = [];
 
   ///statefulWidget para componentes com estado que sofrem alteração em tempo de execução
   ///e statelessWidget para conteúdo estático, sem estado ou sem alteração
 
   @override
 
-  ///possui estado e sobrescreve método build em statelessWidget
+  ///possui estado e sobrescreve método build em statelessWidget (sem estado)
   Widget build(BuildContext context) {
     const title = 'Cardápio Cantina UFFS';
 
@@ -36,15 +57,23 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.lightGreen[900],
         ),
         body: Card(
-          child: Column(
-            children: [
-              Text("risoles"),
-              Text("brigadeiro"),
-              Text("paçoca"),
-              Text("pastel"),
-              Text("sanduíche"),
-            ],
-          ),
+            child: Column(children: [
+              Container(
+                  margin: EdgeInsets.all(10.0),
+                  child: RaisedButton(
+                      color: Theme
+                          .of(context)
+                          .primaryColor,
+                      splashColor: Colors.blueGrey,
+                      textColor: Colors.white,
+                      onPressed: () {
+                        setState(() {
+                          _planetas.add('Saturno');
+                        });
+                      },
+                      child: Text('Saturno'))),
+              Expanded(child: Planetas(_planetas))
+            ])
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){
@@ -53,7 +82,6 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.black,
           tooltip: "Adicionar item na lista",
           elevation: 12,
-          highlightElevation: 50,
           foregroundColor: Colors.green[700],
 
           child: const Icon(Icons.add),
