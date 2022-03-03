@@ -91,6 +91,10 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+// O construtor ListView.separated usa dois IndexedWidgetBuilders: o itemBuilder cria itens filhos sob demanda,
+// e o separatorBuilder também cria filhos separadores que aparecem entre os itens filhos. Esse construtor é
+// apropriado para exibições de lista com um número fixo de filhos.
+
 /// The base class for the different types of items the list can contain.
 abstract class ListItem {
   /// The title line to show in a list item.
