@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/src/widgets/scroll_view.dart';
 
 void main() {
   runApp(
@@ -12,33 +14,25 @@ class MyApp extends StatefulWidget {
   }
 }
 
-class Planetas extends StatelessWidget {
-  final List<String> planetas;
-
-  Planetas(this.planetas);
-
-  Widget _buildPlanetaItem(BuildContext context, int index) {
-    return Card(
-      child: Column(
-        children: <Widget>[
-          Image.asset('assets/planeta1.jpg'),
-          Text(planetas[index], style: TextStyle(color: Colors.purple[200]))
-        ],
-      ),
-    );
-  }
-
+class Lista extends StatelessWidget {
+  final List<String> lista;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: _buildPlanetaItem,
-      itemCount: planetas.length,
+    return ListView(
+      padding: const EdgeInsets.all(8),
+      children: <Widget>[
+        Text('List 1'),
+        Text('List 2'),
+        Text('List 3'),
+      ],
     );
   }
+  Lista(this.lista);
 }
 
+
 class _MyAppState extends State<MyApp> {
-  List<String> _planetas = [];
+  List<String> _lista = [];
 
   ///statefulWidget para componentes com estado que sofrem alteração em tempo de execução
   ///e statelessWidget para conteúdo estático, sem estado ou sem alteração
@@ -57,24 +51,31 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.lightGreen[900],
         ),
         body: Card(
-            child: Column(children: [
-              Container(
-                  margin: EdgeInsets.all(10.0),
-                  child: RaisedButton(
-                      color: Theme
-                          .of(context)
-                          .primaryColor,
-                      splashColor: Colors.blueGrey,
-                      textColor: Colors.white,
-                      onPressed: () {
-                        setState(() {
-                          _planetas.add('Saturno');
-                        });
-                      },
-                      child: Text('Saturno'))),
-              Expanded(child: Planetas(_planetas))
-            ])
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+            const ListTile(
+              leading: Icon(Icons.brunch_dining),
+              title: Text('Coxinha'),
+              subtitle: Text('Carne de frango com catupiry ou palmito com catupiry.'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Expanded(
+                  child: Text('RS 5,00', textAlign: TextAlign.right),
+                ),
+              const SizedBox(width: 8),
+              TextButton(
+                child: const Text('Adicionar à minha lista'),
+                onPressed: () {/* ... */},
+              ),
+                const SizedBox(width: 8),
+              ],
+            ),
+          ],
         ),
+      ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){
             //ADD CODE PRESSED BUTTON
@@ -95,43 +96,3 @@ class _MyAppState extends State<MyApp> {
 // e o separatorBuilder também cria filhos separadores que aparecem entre os itens filhos. Esse construtor é
 // apropriado para exibições de lista com um número fixo de filhos.
 
-/// The base class for the different types of items the list can contain.
-abstract class ListItem {
-  /// The title line to show in a list item.
-  Widget buildTitle(BuildContext context);
-
-  /// The subtitle line, if any, to show in a list item.
-  Widget buildSubtitle(BuildContext context);
-}
-
-/// A ListItem that contains data to display a heading.
-class HeadingItem implements ListItem {
-  final String heading;
-
-  HeadingItem(this.heading);
-
-  @override
-  Widget buildTitle(BuildContext context) {
-    return Text(
-      heading,
-      style: ThemeData(fontFamily: 'RobotoMono').textTheme.headline5,
-    );
-  }
-
-  @override
-  Widget buildSubtitle(BuildContext context) => const SizedBox.shrink();
-}
-
-/// A ListItem that contains data to display a message.
-class MessageItem implements ListItem {
-  final String sender;
-  final String body;
-
-  MessageItem(this.sender, this.body);
-
-  @override
-  Widget buildTitle(BuildContext context) => Text(sender);
-
-  @override
-  Widget buildSubtitle(BuildContext context) => Text(body);
-}
