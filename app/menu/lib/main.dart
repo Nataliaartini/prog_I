@@ -76,9 +76,9 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
-        body:
-              Column(
-                children: [
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
                   Card(
                     child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -235,40 +235,73 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ],
                     ),
-                  ),Card(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                  ),
+              Card(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const ListTile(
+                      leading: Icon(Icons.brunch_dining),
+                      title: Text('Coxinha'),
+                      subtitle: Text('Carne de frango com catupiry ou palmito com catupiry.'),
+                    ),
+                    Wrap(
+                      //mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        const ListTile(
-                          leading: Icon(Icons.brunch_dining),
-                          title: Text('Coxinha'),
-                          subtitle: Text('Carne de frango com catupiry ou palmito com catupiry.'),
+                        Icon(
+                          CupertinoIcons.money_dollar_circle,
+                          color: Colors.green[800],
+                          size: 24.0,),
+                        Expanded(
+                          child: Text('RS 5,00', textAlign: TextAlign.right),
                         ),
-                        Wrap(
-                          //mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            Icon(
-                              CupertinoIcons.money_dollar_circle,
-                              color: Colors.green[800],
-                              size: 24.0,),
-                            Expanded(
-                              child: Text('RS 5,00', textAlign: TextAlign.right),
-                            ),
-                            const SizedBox(width: 8),
-                            TextButton(
-                              child: const Text('Adicionar à minha lista',
-                                style: TextStyle(color: Colors.green),
-                              ),
-                              onPressed: () {/* ... */},
-                            ),
-                            const SizedBox(width: 8),
-                          ],
+                        const SizedBox(width: 8),
+                        TextButton(
+                          child: const Text('Adicionar à minha lista',
+                            style: TextStyle(color: Colors.green),
+                          ),
+                          onPressed: () {/* ... */},
                         ),
+                        const SizedBox(width: 8),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
+              ),Card(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const ListTile(
+                      leading: Icon(Icons.brunch_dining),
+                      title: Text('Coxinha'),
+                      subtitle: Text('Carne de frango com catupiry ou palmito com catupiry.'),
+                    ),
+                    Wrap(
+                      //mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        Icon(
+                          CupertinoIcons.money_dollar_circle,
+                          color: Colors.green[800],
+                          size: 24.0,),
+                        Expanded(
+                          child: Text('RS 5,00', textAlign: TextAlign.right),
+                        ),
+                        const SizedBox(width: 8),
+                        TextButton(
+                          child: const Text('Adicionar à minha lista',
+                            style: TextStyle(color: Colors.green),
+                          ),
+                          onPressed: () {/* ... */},
+                        ),
+                        const SizedBox(width: 8),
+                      ],
+                    ),
+                  ],
+                ),
               ),
+            ],
+          ),
+        ),
         // floatingActionButton: FloatingActionButton(
         //   onPressed: (){
         //   //ADD CODE PRESSED BUTTON
