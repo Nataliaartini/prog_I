@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/scroll_view.dart';
 
 void main() {
   runApp(
@@ -16,17 +14,6 @@ class MyApp extends StatefulWidget {
 
 class Lista extends StatelessWidget {
   final List<String> lista;
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(8),
-      children: <Widget>[
-        Text('List 1'),
-        Text('List 2'),
-        Text('List 3'),
-      ],
-    );
-  }
   Lista(this.lista);
 }
 
@@ -52,25 +39,25 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Card(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
             const ListTile(
               leading: Icon(Icons.brunch_dining),
               title: Text('Coxinha'),
               subtitle: Text('Carne de frango com catupiry ou palmito com catupiry.'),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                Expanded(
-                  child: Text('RS 5,00', textAlign: TextAlign.right),
-                ),
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Expanded(
+                child: Text('RS 5,00', textAlign: TextAlign.right),
+            ),
               const SizedBox(width: 8),
               TextButton(
-                child: const Text('Adicionar à minha lista'),
+                 child: const Text('Adicionar à minha lista'),
                 onPressed: () {/* ... */},
               ),
-                const SizedBox(width: 8),
+              const SizedBox(width: 8),
               ],
             ),
           ],
@@ -78,7 +65,7 @@ class _MyAppState extends State<MyApp> {
       ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){
-            //ADD CODE PRESSED BUTTON
+          //ADD CODE PRESSED BUTTON
           },
           backgroundColor: Colors.black,
           tooltip: "Adicionar item na lista",
