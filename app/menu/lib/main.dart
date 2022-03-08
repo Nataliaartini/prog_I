@@ -494,4 +494,3 @@ class Lista extends StatelessWidget {
 // O construtor ListView.separated usa dois IndexedWidgetBuilders: o itemBuilder cria itens filhos sob demanda,
 // e o separatorBuilder também cria filhos separadores que aparecem entre os itens filhos. Esse construtor é
 // apropriado para exibições de lista com um número fixo de filhos.
-
