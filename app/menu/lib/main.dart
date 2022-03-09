@@ -5,20 +5,10 @@ import 'package:flutter/src/widgets/scroll_view.dart';
 
 void main() {
   runApp(
-      MyApp());
+      Cantina());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _MyAppState();
-  }
-}
-
-
-///talvez eu use essa classe pra fazer pagina lista depois, então deixa ela ai bonitinha
-
-class _MyAppState extends State<MyApp> {
+class Cantina extends StatelessWidget {
   List<String> _minhalista = [];
 
   ///statefulWidget para componentes com estado que sofrem alteração em tempo de execução
