@@ -3,7 +3,7 @@
 ///dessa forma, com esse aplicativo é possível verificar as opções disponíveis
 ///e adicionar sua escolha em uma lista antes de entrar na fila e assim diminuir
 ///o tempo de permanência na fila e todos ficam felizes.
-///desenvolvida por Natalia Artini Ferrandin - nataliaartini@hotmail.com
+///desenvolvido por Natalia Artini Ferrandin - nataliaartini@hotmail.com
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -36,30 +36,9 @@ class Cantina extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Cardápio da Semana"),
           backgroundColor: Colors.lightGreen[900],
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.list_sharp),
-              iconSize: 30,
-              tooltip: 'Abrir minha lista',
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute<MinhaLista>(
-                  builder: (BuildContext context) {
-                    return new Scaffold(
-                      appBar: new AppBar(
-                        title: const Text('Itens adicionados na lista: '),
-                      ),
-                      body: const Center(
-                        child: Text(
-                          'Aqui deveria estar aparecendo a lista com os itens que o usuário adicionou fuck',
-                          style: TextStyle(fontSize: 24),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-                );
-              },
-            ),
+          shadowColor: Colors.green,
+          actions: [
+            AdicionaLista(),
           ],
         ),
         body: SingleChildScrollView(
@@ -144,41 +123,57 @@ class ItensMenu extends StatelessWidget {
 }
 
 
-///botao de adicionar na lista
-class AdicionaLista extends StatefulWidget {
-  const AdicionaLista ({Key? key}) : super (key: key);
-
-  @override
-  _AdicionaLista createState()=> _AdicionaLista();
-
-}
-
-class _AdicionaLista extends State<AdicionaLista> {
-  bool _adicionado = False;
+///muda para página com a lista dos adicionados
+class AdicionaLista extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row (
-      mainAxisSize: MainAxisSize.min, ///vou ter que pensar como fazer isso
+    return
+      ///vou ter que pensar como fazer isso
+      IconButton(
+        icon: const Icon(Icons.list_sharp),
+        iconSize: 30,
+        tooltip: 'Abrir minha lista',
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute<void>(
+            builder: (BuildContext context) {
+              return new Scaffold(
+                appBar: new AppBar(
+                  backgroundColor: Colors.lightGreen[900],
+                  title: const Text('Itens adicionados na lista :'),
+                  shadowColor: Colors.green,
+                ),
+                body: const Center(
+                  child: Text(
+                    'Aqui vai aparecer a lista com os itens adicionados',
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ),
+              );
+            },
+          ),
+        );
+      },
     );
   }
 }
 
 
-///pagina (botao list_all) com a lista dos adicionados na lista
-class MinhaLista extends StatefulWidget {
-  const MinhaLista ({Key? key}) : super (key: key);
 
-  @override
-  _MinhaLista createState()=> _MinhaLista();
-
-}
-
-class _MinhaLista extends State<MinhaLista> {
-  bool _adicionado = False;
-
-  @override
-  Widget build(BuildContext context) {
-    throw UnimplementedError();
-  }
-}
+///botao de adicionar na lista
+// class MinhaLista extends StatefulWidget {
+//   const MinhaLista ({Key? key}) : super (key: key);
+//
+//   @override
+//   _MinhaLista createState()=> _MinhaLista();
+//
+// }
+//
+// class _MinhaLista extends State<MinhaLista> {
+//   bool _adicionado = False;
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     throw UnimplementedError();
+//   }
+// }
