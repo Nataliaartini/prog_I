@@ -1,3 +1,10 @@
+///o presente trabalho tem por objetivo diminuir o tempo de fila na cantina
+///da UFFS. Um dos problemas que eu tenho é a indecisão de escolher o que pedir,
+///dessa forma, com esse aplicativo é possível verificar as opções disponíveis
+///e adicionar sua escolha em uma lista antes de entrar na fila e assim diminuir
+///o tempo de permanência na fila e todos ficam felizes.
+///desenvolvida por Natalia Artini Ferrandin - nataliaartini@hotmail.com
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -137,16 +144,41 @@ class ItensMenu extends StatelessWidget {
 }
 
 
-class MinhaLista extends StatelessWidget {
-  final List<String> minhalista;
+///botao de adicionar na lista
+class AdicionaLista extends StatefulWidget {
+  const AdicionaLista ({Key? key}) : super (key: key);
+
+  @override
+  _AdicionaLista createState()=> _AdicionaLista();
+
+}
+
+class _AdicionaLista extends State<AdicionaLista> {
+  bool _adicionado = False;
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(8),
+    return Row (
+      mainAxisSize: MainAxisSize.min, ///vou ter que pensar como fazer isso
     );
   }
-
-  MinhaLista(this.minhalista);
 }
-///essa classe acho que vou usar pra outra tela
+
+
+///pagina (botao list_all) com a lista dos adicionados na lista
+class MinhaLista extends StatefulWidget {
+  const MinhaLista ({Key? key}) : super (key: key);
+
+  @override
+  _MinhaLista createState()=> _MinhaLista();
+
+}
+
+class _MinhaLista extends State<MinhaLista> {
+  bool _adicionado = False;
+
+  @override
+  Widget build(BuildContext context) {
+    throw UnimplementedError();
+  }
+}
