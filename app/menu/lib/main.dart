@@ -111,7 +111,8 @@ class ItensMenu extends StatelessWidget {
               child: const Text('Adicionar à minha lista',
                 style: TextStyle(color: Colors.green),
               ),
-              onPressed: () {/* ... */},
+              onPressed: () {
+                },
             ),
             const SizedBox(width: 8),
           ],
@@ -129,7 +130,6 @@ class AdicionaLista extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-      ///vou ter que pensar como fazer isso
       IconButton(
         icon: const Icon(Icons.list_sharp),
         iconSize: 30,
@@ -161,19 +161,18 @@ class AdicionaLista extends StatelessWidget {
 
 
 ///botao de adicionar na lista
-// class MinhaLista extends StatefulWidget {
-//   const MinhaLista ({Key? key}) : super (key: key);
-//
-//   @override
-//   _MinhaLista createState()=> _MinhaLista();
-//
-// }
-//
-// class _MinhaLista extends State<MinhaLista> {
-//   bool _adicionado = False;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     throw UnimplementedError();
-//   }
-// }
+class MinhaLista extends StatefulWidget {
+//  const MinhaLista ({Key? key}) : super (key: key);
+
+  @override
+  _MinhaLista createState()=> _MinhaLista();
+
+}
+
+class _MinhaLista extends State<MinhaLista> {
+
+  @override
+  Widget build(BuildContext context) {
+    throw UnimplementedError();
+  }
+}
