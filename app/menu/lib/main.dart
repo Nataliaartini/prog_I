@@ -66,395 +66,7 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-                  Card(
-                    child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      const ListTile(
-                        leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                        title: Text('Coxinha'), textColor: Colors.black,
-                        subtitle: Text('Carne de frango com catupiry ou palmito com catupiry.'),
-                      ),
-                      Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                          child: Icon(
-                            CupertinoIcons.money_dollar_circle,
-                            color: Colors.green[800],
-                            size: 24.0,
-                            textDirection: TextDirection.ltr,),
-                        ),
-                        Expanded(
-                          child: Text(' 5,00', textAlign: TextAlign.left),
-                      ),
-                        const SizedBox(width: 8),
-                        TextButton(
-                           child: const Text('Adicionar à minha lista',
-                           style: TextStyle(color: Colors.green),
-                           ),
-                          onPressed: () {/* ... */},
-                        ),
-                        const SizedBox(width: 8),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            Card(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                      title: Text('Sanduíche de frango'), textColor: Colors.black,
-                      subtitle: Text('Carne de frango, maionese, alface e tomate.'),
-                    ),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                        child: Icon(
-                          CupertinoIcons.money_dollar_circle,
-                          color: Colors.green[800],
-                          size: 24.0,),
-                      ),
-                      Expanded(
-                        child: Text(' 3,00', textAlign: TextAlign.left),
-                    ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                         child: const Text('Adicionar à minha lista',
-                         style: TextStyle(color: Colors.green),
-                         ),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Card(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                      title: Text('Sanduíche de salame'), textColor: Colors.black,
-                      subtitle: Text('Salame, queijo, presunto, maionese e tomate.'),
-                    ),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                        child: Icon(
-                          CupertinoIcons.money_dollar_circle,
-                          color: Colors.green[800],
-                          size: 24.0,),
-                      ),
-                      Expanded(
-                        child: Text(' 3,50', textAlign: TextAlign.left),
-                    ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                         child: const Text('Adicionar à minha lista',
-                         style: TextStyle(color: Colors.green),
-                         ),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Card(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                      title: Text('Mini pizza'), textColor: Colors.black,
-                      subtitle: Text('Calabresa, musarela, molho de tomate.'),
-                    ),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                        child: Icon(
-                          CupertinoIcons.money_dollar_circle,
-                          color: Colors.green[800],
-                          size: 24.0,),
-                      ),
-                      Expanded(
-                        child: Text(' 7,00', textAlign: TextAlign.left),
-                    ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                         child: const Text('Adicionar à minha lista',
-                         style: TextStyle(color: Colors.green),
-                         ),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                    ],
-                   ),
-                ],
-              ),
-            ),
-            Card(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                      title: Text('Pão de queijo'), textColor: Colors.black,
-                      subtitle: Text('temperado com orégano ou tradicional.'),
-                    ),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                        child: Icon(
-                          CupertinoIcons.money_dollar_circle,
-                          color: Colors.green[800],
-                          size: 24.0,),
-                      ),
-                      Expanded(
-                        child: Text(' 4,00', textAlign: TextAlign.left),
-                    ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                         child: const Text('Adicionar à minha lista',
-                         style: TextStyle(color: Colors.green),
-                         ),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Card(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                      title: Text('Paçoca'), textColor: Colors.black,
-                      subtitle: Text('paçoquita.'),
-                    ),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                        child: Icon(
-                          CupertinoIcons.money_dollar_circle,
-                          color: Colors.green[800],
-                          size: 24.0,),
-                      ),
-                      Expanded(
-                        child: Text(' 0,75', textAlign: TextAlign.left),
-                    ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                         child: const Text('Adicionar à minha lista',
-                         style: TextStyle(color: Colors.green),
-                         ),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
-                ],
-              ),
-                  ),Card(
-                    child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                      const ListTile(
-                        leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                        title: Text('Risoles de carne'), textColor: Colors.black,
-                        subtitle: Text('Carne de gado.'),
-                      ),
-                      Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                          child: Icon(
-                            CupertinoIcons.money_dollar_circle,
-                            color: Colors.green[800],
-                            size: 24.0,),
-                        ),
-                        Expanded(
-                          child: Text(' 5,00', textAlign: TextAlign.left),
-                      ),
-                        const SizedBox(width: 8),
-                        TextButton(
-                           child: const Text('Adicionar à minha lista',
-                           style: TextStyle(color: Colors.green),
-                           ),
-                          onPressed: () {/* ... */},
-                        ),
-                        const SizedBox(width: 8),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            Card(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                      title: Text('Risoles de frango'), textColor: Colors.black,
-                      subtitle: Text('Carne de frango.'),
-                    ),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                        child: Icon(
-                          CupertinoIcons.money_dollar_circle,
-                          color: Colors.green[800],
-                          size: 24.0,),
-                      ),
-                      Expanded(
-                        child: Text(' 5,00', textAlign: TextAlign.left),
-                    ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                         child: const Text('Adicionar à minha lista',
-                         style: TextStyle(color: Colors.green),
-                         ),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Card(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                      title: Text('Risoles de queijo'), textColor: Colors.black,
-                      subtitle: Text('queijo Cheddar e musarela.'),
-                    ),
-                    Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                        child: Icon(
-                          CupertinoIcons.money_dollar_circle,
-                          color: Colors.green[800],
-                          size: 24.0,),
-                      ),
-                      Expanded(
-                        child: Text(' 5,00', textAlign: TextAlign.left),
-                    ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                         child: const Text('Adicionar à minha lista',
-                         style: TextStyle(color: Colors.green),
-                         ),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Card(
-              child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                const ListTile(
-                  leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                  title: Text('Rocambole de frango'), textColor: Colors.black,
-                  subtitle: Text('Carne de frango com catupiry.'),
-                ),
-                Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                    child: Icon(
-                      CupertinoIcons.money_dollar_circle,
-                      color: Colors.green[800],
-                      size: 24.0,),
-                  ),
-                  Expanded(
-                    child: Text(' 8,00', textAlign: TextAlign.left),
-                ),
-                  const SizedBox(width: 8),
-                  TextButton(
-                     child: const Text('Adicionar à minha lista',
-                     style: TextStyle(color: Colors.green),
-                     ),
-                    onPressed: () {/* ... */},
-                  ),
-                  const SizedBox(width: 8),
-                ],
-              ),
-            ],
-          ),
-          ),
-            Card(
-              child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const ListTile(
-                  leading: Icon(Icons.brunch_dining, color: Colors.green,),
-                  title: Text('Coxinha'), textColor: Colors.black,
-                  subtitle: Text('Carne de frango com catupiry ou palmito com catupiry.'),
-                ),
-                Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
-                    child: Icon(
-                      CupertinoIcons.money_dollar_circle,
-                      color: Colors.green[800],
-                      size: 24.0,),
-                  ),
-                  Expanded(
-                    child: Text(' 5,00', textAlign: TextAlign.left),
-                ),
-                  const SizedBox(width: 8),
-                  TextButton(
-                     child: const Text('Adicionar à minha lista',
-                     style: TextStyle(color: Colors.green),
-                     ),
-                    onPressed: () {/* ... */},
-                  ),
-                  const SizedBox(width: 8),
-                ],
-              ),
-              ],
-              ),
-              ),
-            ],
-          ),
+          child: ListaMenu(),
         ),
       ),
     );
@@ -478,6 +90,404 @@ class _MyAppState extends State<MyApp> {
 // }
 
 
+class ListaMenu extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      children: [
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Coxinha'), textColor: Colors.black,
+                subtitle: Text('Carne de frango com catupiry ou palmito com catupiry.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,
+                      textDirection: TextDirection.ltr,),
+                  ),
+                  Expanded(
+                    child: Text(' 5,00', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Sanduíche de frango'), textColor: Colors.black,
+                subtitle: Text('Carne de frango, maionese, alface e tomate.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 3,00', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Sanduíche de salame'), textColor: Colors.black,
+                subtitle: Text('Salame, queijo, presunto, maionese e tomate.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 3,50', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Mini pizza'), textColor: Colors.black,
+                subtitle: Text('Calabresa, musarela, molho de tomate.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 7,00', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Pão de queijo'), textColor: Colors.black,
+                subtitle: Text('temperado com orégano ou tradicional.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 4,00', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Paçoca'), textColor: Colors.black,
+                subtitle: Text('paçoquita.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 0,75', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Risoles de carne'), textColor: Colors.black,
+                subtitle: Text('Carne de gado.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 5,00', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Risoles de frango'), textColor: Colors.black,
+                subtitle: Text('Carne de frango.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 5,00', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Risoles de queijo'), textColor: Colors.black,
+                subtitle: Text('queijo Cheddar e musarela.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 5,00', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Rocambole de frango'), textColor: Colors.black,
+                subtitle: Text('Carne de frango com catupiry.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 8,00', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                title: Text('Coxinha'), textColor: Colors.black,
+                subtitle: Text('Carne de frango com catupiry ou palmito com catupiry.'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 2),
+                    child: Icon(
+                      CupertinoIcons.money_dollar_circle,
+                      color: Colors.green[800],
+                      size: 24.0,),
+                  ),
+                  Expanded(
+                    child: Text(' 5,00', textAlign: TextAlign.left),
+                  ),
+                  const SizedBox(width: 8),
+                  TextButton(
+                    child: const Text('Adicionar à minha lista',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                    onPressed: () {/* ... */},
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
 class Lista extends StatelessWidget {
   final List<String> lista;
 
@@ -490,7 +500,4 @@ class Lista extends StatelessWidget {
 
   Lista(this.lista);
 }
-
-// O construtor ListView.separated usa dois IndexedWidgetBuilders: o itemBuilder cria itens filhos sob demanda,
-// e o separatorBuilder também cria filhos separadores que aparecem entre os itens filhos. Esse construtor é
-// apropriado para exibições de lista com um número fixo de filhos.
+///essa classe acho que vou usar pra outra tela
