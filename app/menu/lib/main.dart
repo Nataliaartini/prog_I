@@ -17,16 +17,12 @@ void main() {
 
 class Cantina extends StatelessWidget {
   List<String> _minhalista = [];
-
   ///statefulWidget para componentes com estado que sofrem alteração em tempo de execução
   ///e statelessWidget para conteúdo estático, sem estado ou sem alteração
-
   @override
-
   ///possui estado e sobrescreve método build em statelessWidget (sem estado)
   Widget build(BuildContext context) {
     const title = 'Cardápio Cantina UFFS';
-
     return MaterialApp(
       // Hide the debug banner
       debugShowCheckedModeBanner: false,
@@ -135,19 +131,20 @@ class AdicionaLista extends StatelessWidget {
         iconSize: 30,
         tooltip: 'Abrir minha lista',
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute<void>(
+          Navigator.push(context, MaterialPageRoute<MinhaLista>(
             builder: (BuildContext context) {
               return new Scaffold(
                 appBar: new AppBar(
                   backgroundColor: Colors.lightGreen[900],
-                  title: const Text('Itens adicionados na lista :'),
+                  title: const Text('Itens adicionados na lista:'),
                   shadowColor: Colors.green,
                 ),
-                body: const Center(
-                  child: Text(
-                    'Aqui vai aparecer a lista com os itens adicionados',
-                    style: TextStyle(fontSize: 24),
-                  ),
+                body: Card(
+                child:
+                 ListTile(
+                  leading: Icon(Icons.brunch_dining, color: Colors.green,),
+                  title: Text("Comidinhas :p"),
+                ),
                 ),
               );
             },
