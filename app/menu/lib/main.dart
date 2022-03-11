@@ -77,11 +77,14 @@ class ItensMenu extends StatelessWidget {
 
   ItensMenu(this.alimento, this.descricao, this.preco);
 
+  get onPressed => null;
+
   @override
   Widget build(BuildContext context) {
     return
       Card(
-        child: Column(
+        child:
+        Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
          ListTile(
@@ -103,15 +106,18 @@ class ItensMenu extends StatelessWidget {
               child: Text(preco, textAlign: TextAlign.left),
             ),
             const SizedBox(width: 8),
-            TextButton(
-              child: const Text('Adicionar à minha lista',
-                style: TextStyle(color: Colors.green),
-              ),
-              onPressed: () {
+            ElevatedButton(
+                onPressed:(){
+                  var adicionados = [];
+                  adicionados.add("$alimento");
+                  print("adicionou $alimento na lista");
                 },
+                child: Text('Adicionar à minha lista'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                onPrimary: Colors.green,
             ),
-            const SizedBox(width: 8),
-          ],
+            )],
         ),
       ],
     ),
@@ -156,20 +162,21 @@ class AdicionaLista extends StatelessWidget {
 }
 
 
-
 ///botao de adicionar na lista
 class MinhaLista extends StatefulWidget {
 //  const MinhaLista ({Key? key}) : super (key: key);
 
   @override
   _MinhaLista createState()=> _MinhaLista();
-
 }
+
 
 class _MinhaLista extends State<MinhaLista> {
 
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return Scaffold(
+      body:
+      Text("teste"));
   }
 }
