@@ -4,9 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/scroll_view.dart';
 
-///muda para página com a lista dos adicionados
-class AdicionaLista extends StatelessWidget {
+///abre a lista
+class MinhaLista extends StatefulWidget {
 
+  @override
+  _MinhaLista createState()=> _MinhaLista();
+}
+
+class _MinhaLista extends State<MinhaLista> {
   @override
   Widget build(BuildContext context) {
     return
@@ -23,11 +28,14 @@ class AdicionaLista extends StatelessWidget {
                   title: const Text('Itens adicionados na lista:'),
                   shadowColor: Colors.green,
                 ),
-                body: Card(
+                body: new SingleChildScrollView(
                   child:
-                  ListTile(
-                    leading: Icon(Icons.brunch_dining, color: Colors.green),
-                    title: Text("Comidinhas :p"),
+                  Card(
+                    child:
+                    ListTile(
+                      leading: Icon(Icons.brunch_dining, color: Colors.green),
+                      title: Text("Comidinhas :p"),
+                    ),
                   ),
                 ),
               );
