@@ -1,3 +1,4 @@
+import 'package:menu/cria_menu.dart';
 import 'package:menu/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ class MinhaLista extends StatefulWidget {
 }
 
 class _MinhaLista extends State<MinhaLista> {
+  final List<ItensMenu> _atualizaLista = [];
+
   @override
   Widget build(BuildContext context) {
     return
@@ -28,16 +31,12 @@ class _MinhaLista extends State<MinhaLista> {
                   title: const Text('Itens adicionados na lista:'),
                   shadowColor: Colors.green,
                 ),
-                body: new SingleChildScrollView(
-                  child:
-                  Card(
-                    child:
-                    ListTile(
-                      leading: Icon(Icons.brunch_dining, color: Colors.green),
-                      title: Text("Comidinhas :p"),
-                    ),
-                  ),
-                ),
+                body: ListView.builder(
+                          itemCount: _atualizaLista.length,
+                          itemBuilder: (context, indice) {
+                            final lista = _atualizaLista[indice];
+                            return ItensMenu("alimento", "descricao", "preco");
+                          },)
               );
             },
           ),

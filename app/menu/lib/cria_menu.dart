@@ -44,7 +44,7 @@ class ItensMenu extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context){
                       return ListaMenu();
                     }),
-                    ).then((itemAdicionado) => _atualiza(itemAdicionado));
+                    ).then((itemAdicionado) => _atualizaLista(itemAdicionado));
                   },
                   child: Text('Adicionar à minha lista'),
                   style: ElevatedButton.styleFrom(
@@ -82,11 +82,11 @@ class ListaMenu extends StatelessWidget {
   }
 }
 
-void _atualiza(MinhaLista itemAdicionado) {
-  if (itemAdicionado != null) {
-    setState(() {
-      widget._itens.add(itemAdicionado); //falta criar esse parametro, tentar achar outra solução pra esse problema
-    });
-  }
-}
+// void _atualiza(MinhaLista itemAdicionado) {
+//   if (itemAdicionado != null) {
+//     setState(() {
+//       widget._atualizaLista.add(itemAdicionado); //falta criar esse parametro, tentar achar outra solução pra esse problema
+//     });
+//   }
+// }
 
