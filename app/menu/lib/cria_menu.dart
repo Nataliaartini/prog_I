@@ -41,10 +41,10 @@ class ItensMenu extends StatelessWidget {
                 const SizedBox(width: 8),
                 ElevatedButton(
                   onPressed:(){
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
                       return ListaMenu();
                     }),
-                    );  //navigator context
+                    ).then((itemAdicionado) => _atualiza(itemAdicionado));
                   },
                   child: Text('Adicionar à minha lista'),
                   style: ElevatedButton.styleFrom(
@@ -81,3 +81,12 @@ class ListaMenu extends StatelessWidget {
     );
   }
 }
+
+void _atualiza(MinhaLista itemAdicionado) {
+  if (itemAdicionado != null) {
+    setState(() {
+      widget._itens.add(itemAdicionado); //falta criar esse parametro, tentar achar outra solução pra esse problema
+    });
+  }
+}
+
