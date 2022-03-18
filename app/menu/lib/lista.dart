@@ -28,7 +28,7 @@ class _MinhaLista extends State<MinhaLista> {
               return new Scaffold(
                 appBar: new AppBar(
                   backgroundColor: Colors.lightGreen[900],
-                  title: const Text('Itens adicionados na lista:'),
+                  title: const Text('Itens adicionados na lista'),
                   shadowColor: Colors.green,
                 ),
                 body: ListView.builder(

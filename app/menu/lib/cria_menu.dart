@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:menu/lista.dart';
-import 'package:menu/inicial.dart';
+
 
 class ItensMenu extends StatelessWidget {
+
+  final List<ItensMenu> _atualizaLista = []; //na minha cabeça ta fazendo sentido, salvar a lista aqui pra depois passar pra lista?
 
   final String alimento;
   final String descricao;
@@ -41,10 +43,6 @@ class ItensMenu extends StatelessWidget {
                 const SizedBox(width: 8),
                 ElevatedButton(
                   onPressed:(){
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return ListaMenu();
-                    }),
-                    ).then((itemAdicionado) => _atualizaLista(itemAdicionado));
                   },
                   child: Text('Adicionar à minha lista'),
                   style: ElevatedButton.styleFrom(
@@ -64,7 +62,7 @@ class ListaMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Column( ///mudar isso pra listbiew builder pra poder contar o indice e depois criar classe que imprime um card so com as informaçoes daqui
       children: <Widget>[
         ItensMenu("Coxinha", "Carne de frango com catupiry ou palmito com catupiry.", "5,00"),
         ItensMenu("Sanduíche de frango", "Carne de frango, maionese, alface e tomate.", "4,00"),
@@ -82,11 +80,27 @@ class ListaMenu extends StatelessWidget {
   }
 }
 
-// void _atualiza(MinhaLista itemAdicionado) {
-//   if (itemAdicionado != null) {
-//     setState(() {
-//       widget._atualizaLista.add(itemAdicionado); //falta criar esse parametro, tentar achar outra solução pra esse problema
-//     });
+
+
+// class MostraItens extends StatelessWidget {
+//   final List<ItensMenu> _itensmenu = [];
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView.builder( ///mudei de column para listview para pegar o indice
+//       itemCount: _itensmenu.length,
+//       itemBuilder: (context, indice) {
+//         final ItensMenu = _itensmenu[indice];
+//         //return ItensMenu(_itensmenu); ---- vou ter que passar pro caderno pra pensar num melhor jeito de fazer isso
+//       },
+//     );
 //   }
 // }
 
+// void _atualiza(MinhaLista itemAdicionado) {
+//   if (itemAdicionado != null) {
+//     setState(() {
+//       _atualizaLista.add(itemAdicionado); //falta criar esse parametro, tentar achar outra solução pra esse problema
+//     });
+//   }
+// }
