@@ -9,7 +9,10 @@ import 'package:flutter/src/widgets/scroll_view.dart';
 class MinhaLista extends StatefulWidget {
 
   @override
-  _MinhaLista createState()=> _MinhaLista();
+  State<StatefulWidget> createState(){
+    return _MinhaLista();
+  }
+//  _MinhaLista createState()=> _MinhaLista();
 }
 
 class _MinhaLista extends State<MinhaLista> {
@@ -35,11 +38,11 @@ class _MinhaLista extends State<MinhaLista> {
                           itemCount: _atualizaLista.length,
                           itemBuilder: (context, indice) {
                             final lista = _atualizaLista[indice];
-                            return ItensMenu("alimento", "descricao", "preco");
+                            return ListaMenu(); ///aqui vai entrar a funcao de adciionar na lista pode ser o void la do criamenu
                           },)
-              );
-            },
-          ),
+                );
+              },
+            ),
           );
         },
       );

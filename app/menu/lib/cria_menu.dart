@@ -43,7 +43,13 @@ class ItensMenu extends StatelessWidget {
                 const SizedBox(width: 8),
                 ElevatedButton(
                   onPressed:(){
-                  },
+                    Navigator.push(context, MaterialPageRoute<ListaMenu>(
+                    builder: (BuildContext context) {
+                    return ListaMenu(); //salvar o item na lista
+                      },
+                    ),
+                  );
+                },
                   child: Text('Adicionar à minha lista'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
