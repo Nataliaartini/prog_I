@@ -1,11 +1,22 @@
+import 'package:menu/cria_menu.dart';
 import 'package:menu/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/scroll_view.dart';
 
-///muda para página com a lista dos adicionados
-class AdicionaLista extends StatelessWidget {
+///abre a lista
+class MinhaLista extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState(){
+    return _MinhaLista();
+  }
+//  _MinhaLista createState()=> _MinhaLista();
+}
+
+class _MinhaLista extends State<MinhaLista> {
+  final List<ItensMenu> _atualizaLista = [];
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +31,18 @@ class AdicionaLista extends StatelessWidget {
               return new Scaffold(
                 appBar: new AppBar(
                   backgroundColor: Colors.lightGreen[900],
-                  title: const Text('Itens adicionados na lista:'),
+                  title: const Text('Itens adicionados na lista'),
                   shadowColor: Colors.green,
                 ),
-                body: Card(
-                  child:
-                  ListTile(
-                    leading: Icon(Icons.brunch_dining, color: Colors.green),
-                    title: Text("Comidinhas :p"),
-                  ),
-                ),
-              );
-            },
-          ),
+                body: ListView.builder(
+                          itemCount: _atualizaLista.length,
+                          itemBuilder: (context, indice) {
+                            final lista = _atualizaLista[indice];
+                            return ListaMenu(); ///aqui vai entrar a funcao de adciionar na lista pode ser o void la do criamenu
+                          },)
+                );
+              },
+            ),
           );
         },
       );

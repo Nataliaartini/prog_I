@@ -1,6 +1,6 @@
 # menu
 
-A new Flutter project.
+A new Flutter project for the programming subject at UFFS. Feel free to contribute or make suggestions. Any questions, I'm glad to help.
 
 ## Getting Started
 
