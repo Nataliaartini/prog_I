@@ -30,7 +30,7 @@ class _MinhaLista extends State<MinhaLista> {
             builder: (BuildContext context) {
               return new Scaffold(
                 appBar: new AppBar(
-                  backgroundColor: Colors.lightGreen[900],
+                  backgroundColor: Colors.green[900],
                   title: const Text('Itens adicionados na lista'),
                   shadowColor: Colors.green,
                 ),

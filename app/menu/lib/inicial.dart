@@ -19,7 +19,7 @@ class Cantina extends StatelessWidget {
         backgroundColor: Colors.black12,
         appBar: AppBar(
           title: const Text("Cardápio da Semana"),
-          backgroundColor: Colors.lightGreen[900],
+          backgroundColor: Colors.green[900],
           shadowColor: Colors.green,
           actions: [
             MinhaLista(),
