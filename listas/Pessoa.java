@@ -45,19 +45,19 @@ public class Pessoa {
         CriaPessoa p = new CriaPessoa();
         Scanner nome = new Scanner(System.in);
         System.out.println("Digite o nome: ");
-        String nome1 = nome.nextLine();
+        String getNome = nome.nextLine();
 
         Scanner idade = new Scanner(System.in);
         System.out.println("Digite a idade: ");
-        int idade1 = Integer.parseInt(idade.nextLine());
+        int getIdade = Integer.parseInt(idade.nextLine());
 
         Scanner peso = new Scanner(System.in);
         System.out.println("Digite o peso: ");
-        float peso1 = Float.parseFloat(peso.nextLine());
+        float getPeso = Float.parseFloat(peso.nextLine());
 
-        p.setNome(nome1);
-        p.setIdade(idade1);
-        p.setPeso(peso1);
+        p.setNome(getNome);
+        p.setIdade(getIdade);
+        p.setPeso(getPeso);
 
         // vamos mostrar os dados da pessoa
         p.imprimeDados();
