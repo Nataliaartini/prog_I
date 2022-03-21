@@ -13,7 +13,6 @@ class ItensMenu extends StatelessWidget {
 
   ItensMenu(this.alimento, this.descricao, this.preco);
 
-
   @override
   Widget build(BuildContext context) {
     return
@@ -42,33 +41,60 @@ class ItensMenu extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 ElevatedButton(
-                  onPressed:(){
-                    Navigator.push(context, MaterialPageRoute<ListaMenu>(
-                    builder: (BuildContext context) {
-                    return ListaMenu(); //salvar o item na lista
-                      },
-                    ),
-                  );
-                },
-                  child: Text('Adicionar à minha lista'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    onPrimary: Colors.green,
-                  ),
-                )],
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute<MinhaLista>(
+                        builder: (context) {
+                          _atualizaLista.add(ItensMenu(this.alimento, this.descricao, this.preco));
+                          return Scaffold(
+                            appBar: new AppBar(
+                              backgroundColor: Colors.green[900],
+                              title: const Text('Itens adicionados na lista'),
+                              shadowColor: Colors.green,
+                            ),
+                             body: ListView.builder(
+                               itemCount: _atualizaLista.length,
+                               itemBuilder: (context, indice) {
+                                return ItensMenu(this.alimento, this.descricao,
+                                    this.preco);
+                              },
+                            ),
+                          );
+                          // return ItensMenu(this.alimento, this.descricao,
+                          //     this.preco); //salvar o item na lista
+                        },
+                      ),
+                      );
+                    },
+                    child: Text('Adicionar à minha lista'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      onPrimary: Colors.green,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      ),
+                    ))
+              ],
             ),
           ],
         ),
       );
+
+//     void _criaTransferencia(BuildContext context) {
+//       if (alimento != null && descricao != null) {
+//         final adicionouLista = ItemAdicionado(alimento, descricao);
+//           }
+//         }
+//       },
+//     }
   }
-}
+ }
 
 
 class ListaMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column( ///mudar isso pra listbiew builder pra poder contar o indice e depois criar classe que imprime um card so com as informaçoes daqui
+    return Column(
       children: <Widget>[
         ItensMenu("Coxinha", "Carne de frango com catupiry ou palmito com catupiry.", "5,00"),
         ItensMenu("Sanduíche de frango", "Carne de frango, maionese, alface e tomate.", "4,00"),
@@ -97,16 +123,68 @@ class ListaMenu extends StatelessWidget {
 //       itemCount: _itensmenu.length,
 //       itemBuilder: (context, indice) {
 //         final ItensMenu = _itensmenu[indice];
-//         //return ItensMenu(_itensmenu); ---- vou ter que passar pro caderno pra pensar num melhor jeito de fazer isso
+//         return ItensMenu; //---- vou ter que passar pro caderno pra pensar num melhor jeito de fazer isso
 //       },
 //     );
 //   }
 // }
 
-// void _atualiza(MinhaLista itemAdicionado) {
-//   if (itemAdicionado != null) {
-//     setState(() {
-//       _atualizaLista.add(itemAdicionado); //falta criar esse parametro, tentar achar outra solução pra esse problema
-//     });
-//   }
-// }
+
+
+
+
+class MinhaLista extends StatefulWidget {
+
+  final List<ItensMenu> _atualizaLista = [];
+
+  @override
+  State<StatefulWidget> createState(){
+    return _MinhaLista();
+  }
+//  _MinhaLista createState()=> _MinhaLista();
+}
+
+class _MinhaLista extends State<MinhaLista> {
+
+  @override
+  Widget build(BuildContext context) {
+    return
+      IconButton(
+          icon: const Icon(Icons.list_sharp),
+          iconSize: 30,
+          tooltip: 'Abrir minha lista',
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute<MinhaLista>(
+                builder: (BuildContext context)
+                {
+                  return Scaffold(
+                    appBar: new AppBar(
+                      backgroundColor: Colors.green[900],
+                      title: const Text('Itens adicionados na lista'),
+                      shadowColor: Colors.green,
+                    ),
+                    body: ListView.builder(
+                      itemCount: widget._atualizaLista.length,
+                      itemBuilder: (context, indice) {
+                        final adicionouLista = widget._atualizaLista[indice];
+                        return adicionouLista;
+                      },
+                    ),
+                  );
+                }
+            ),);
+          }
+      );
+  }
+
+// @override
+//   return
+//     Column(
+//         mainAxisSize: MainAxisSize.min,
+//           ListTile(
+//             leading: Icon(Icons.brunch_dining, color: Colors.green,),
+//             title: Text("alimento"),
+//             subtitle: Text("descricao"),
+//           ),
+//         )
+}

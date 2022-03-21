@@ -13,5 +13,5 @@ import 'package:menu/inicial.dart';
 void main() {
   runApp(
       Cantina());
-      MinhaLista();
+      //MinhaLista();
 }
