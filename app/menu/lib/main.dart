@@ -7,11 +7,9 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:menu/lista.dart';
 import 'package:menu/inicial.dart';
 
 void main() {
   runApp(
       Cantina());
-      MinhaLista();
 }

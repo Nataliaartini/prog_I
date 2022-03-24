@@ -4,7 +4,7 @@ import 'package:menu/lista.dart';
 import 'package:menu/cria_menu.dart';
 
 class Cantina extends StatelessWidget {
-  List<String> _minhalista = [];
+  List<CriaItem> _minhalista = [];
   ///statefulWidget para componentes com estado que sofrem alteração em tempo de execução
   ///e statelessWidget para conteúdo estático, sem estado ou sem alteração
   @override
@@ -22,11 +22,11 @@ class Cantina extends StatelessWidget {
           backgroundColor: Colors.green[900],
           shadowColor: Colors.green,
           actions: [
-            MinhaLista(),
+            MinhaLista(atualizaLista: _minhalista,),
           ],
         ),
         body: SingleChildScrollView(
-          child: ListaMenu(),
+          child: ListaMenu(_minhalista),
         ),
       ),
     );
