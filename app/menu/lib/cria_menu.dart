@@ -40,6 +40,7 @@ class CriaItem extends StatelessWidget {
                   const SizedBox(width: 8),
                   ElevatedButton(
                       onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$alimento adicionado à sua lista')));
                         atualizaLista.add(CriaItem(alimento, descricao, preco, atualizaLista));
                       },
                       child: Text('Adicionar à minha lista'),
