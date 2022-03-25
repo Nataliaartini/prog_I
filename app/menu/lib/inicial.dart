@@ -4,11 +4,11 @@ import 'package:menu/lista.dart';
 import 'package:menu/cria_menu.dart';
 
 class Cantina extends StatelessWidget {
+
   List<CriaItem> _minhalista = [];
-  ///statefulWidget para componentes com estado que sofrem alteração em tempo de execução
-  ///e statelessWidget para conteúdo estático, sem estado ou sem alteração
+
   @override
-  ///possui estado e sobrescreve método build em statelessWidget (sem estado)
+
   Widget build(BuildContext context) {
     const title = 'Cardápio Cantina UFFS';
     return MaterialApp(

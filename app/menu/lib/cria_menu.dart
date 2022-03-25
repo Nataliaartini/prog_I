@@ -9,7 +9,7 @@ class CriaItem extends StatelessWidget {
   final descricao;
   final preco;
 
-  CriaItem(this.alimento, this.descricao, this.preco, this.atualizaLista);
+  const CriaItem(this.alimento, this.descricao, this.preco, this.atualizaLista, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,6 @@ class CriaItem extends StatelessWidget {
                   ElevatedButton(
                       onPressed: () {
                         atualizaLista.add(CriaItem(alimento, descricao, preco, atualizaLista));
-                        debugPrint("ll");
                       },
                       child: Text('Adicionar à minha lista'),
                       style: ElevatedButton.styleFrom(
@@ -58,14 +57,13 @@ class CriaItem extends StatelessWidget {
           ),
         );
   }
-
 }
 
 
 class ListaMenu extends StatelessWidget {
 
   final List<CriaItem> atualizaLista;
-  ListaMenu(this.atualizaLista);
+  const ListaMenu(this.atualizaLista);
 
   @override
   Widget build(BuildContext context) {
